@@ -13,3 +13,11 @@ locals {
     Provisioner = "terraform"
   }
 }
+
+module "static_objects" {
+  source = "../../modules/s3"
+
+  default_tags = local.default_tags
+  name_prefix  = local.name_prefix
+  bucket_name  = "spokanerust-static-objects"
+}
